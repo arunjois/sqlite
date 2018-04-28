@@ -26,7 +26,7 @@ public class Query {
 	 */
 	public static String getFeatureId()
 	{
-		
+
 		String featureId=new String();
 		//double longitude=-1,latitude=-1;
 		Connection c = null;
@@ -45,8 +45,8 @@ public class Query {
 				longitude = rs.getInt("longitude");
 			}
 			/*featureId = rs.getString("country_code");
-			latitude = rs.getInt("latitude");
-			longitude = rs.getInt("longitude");*/
+			  latitude = rs.getInt("latitude");
+			  longitude = rs.getInt("longitude");*/
 			rs.close();
 			stmt.close();
 			c.close();
@@ -55,9 +55,9 @@ public class Query {
 			System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 			System.exit(0);
 		}
-		
+
 		return featureId;
-		
+
 	}
 	public String getPlace()
 	{
@@ -80,7 +80,7 @@ public class Query {
 		Connection c=null;
 		Statement stmt=null;
 		String fid = new String("");
-		
+
 		try {
 			Class.forName("org.sqlite.JDBC");
 			c = DriverManager.getConnection("jdbc:sqlite:~/test.db");

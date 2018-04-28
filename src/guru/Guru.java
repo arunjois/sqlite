@@ -63,24 +63,23 @@ public class Guru {
 				switch(count)
 				{
 					case 1: month = Integer.parseInt(line);
-						break;
+							break;
 					case 2: day = Integer.parseInt(line);
-						break;
+							break;
 					case 3: year = Integer.parseInt(line);
-						break;
+							break;
 					case 4: time = Double.parseDouble(line);
-						break;
+							break;
 					case 6: log = Double.parseDouble(line);
-						break;
+							break;
 					case 7: lat = Double.parseDouble(line);
-						break;
+							break;
 					case 9: timezone = Double.parseDouble(line);
-						break;
+							break;
 					case 13:Place = line;
-						System.out.println(Place);
-						break;
+							break;
 					case 18:gender = Integer.parseInt(line);
-						break;
+							break;
 				}			
 			}
 			fileReader.close();
@@ -89,7 +88,7 @@ public class Guru {
 		} catch (IOException e) {
 			System.out.print(e);
 		}
-		
+
 
 		System.out.println("Contents of file:");
 		System.out.println(month);
@@ -101,17 +100,17 @@ public class Guru {
 		System.out.println(lat);
 		System.out.println(gender);
 		System.out.println(Place);
-		
-		
+
+
 		Query q = new Query(Place);
-		
-	       
-	
-		
+
+
+
+
 		timezone=q.getTimeZone();
 		time = time + timezone;
-		
-		
+
+
 		System.out.println("Contents of file:");
 		System.out.println(month);
 		System.out.println(day);
@@ -121,11 +120,11 @@ public class Guru {
 		System.out.println(log);
 		System.out.println(lat);
 		System.out.println(gender);
-		
+
 		/*
-		* Function to check the equivalent 
-		* GMT time, date for the given date
-		*/
+		 * Function to check the equivalent 
+		 * GMT time, date for the given date
+		 */
 		if(time < 0 || time>=24)
 		{
 			if (time < 0)
@@ -133,23 +132,23 @@ public class Guru {
 				;
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		SwissEph sw = new SwissEph();
 		SweDate sd = new SweDate(year,month,day,time);
 		sw.swe_set_sid_mode(SID_METHOD, 0, 0);
@@ -161,7 +160,7 @@ public class Guru {
 		StringBuffer serr = new StringBuffer();
 
 		double latitude = lat , longitude = log; 
-		
+
 		// Print input details:
 		System.out.println("Date (YYYY/MM/DD): " + sd.getYear() + "/" + 
 				sd.getMonth() + "/" + sd.getDay() + ", " + 
@@ -190,7 +189,7 @@ public class Guru {
 		System.out.println("Ascendant: " + toDMS(acsc[0]) + "\n");
 		int ascSign = (int)(acsc[0] / 30) + 1;
 		System.out.println("Ascendant: " +acsc[0] + "\n" + ascSign);
-		
+
 
 		// Calculate all planets:
 		int[] planets = { SweConst.SE_SUN,
